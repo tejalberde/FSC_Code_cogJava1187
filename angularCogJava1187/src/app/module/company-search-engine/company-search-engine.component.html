@@ -1,0 +1,77 @@
+<div class="page-header">
+  <h1>Search Engine</h1>
+</div>
+<div class="row">
+  <div class="col-md-3 col-sm-12">
+    <div class="form-group">
+      <label>Company Code</label>
+      <input type="number" class="form-control" [(ngModel)]="filter.companyCode" name="companyCode"/>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <div class="form-group">
+      <label>From Date</label>
+      <input type="date" class="form-control"  [(ngModel)]="filter.fromDate" name="fromDate"/>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <div class="form-group">
+      <label>To Date</label>
+      <input type="date" class="form-control"  [(ngModel)]="filter.toDate" name="toDate"/>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-12">
+    <button class="btn btn-primary mt-5" (click)="searchData()">Search</button>
+    <button class="btn btn-secondary mt-5" (click)="resetFilter()">Reset</button>
+  </div>
+  <div class="col-md-12 col-sm-12">
+
+<section *ngIf="showStats">
+  
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <table class="table  table-bordered">
+          <tr>
+            <th>Average Stock</th>
+            <th>{{this.stats.averagePrice}}</th>
+          </tr>
+          <tr>
+            <th>Maximum Stock</th>
+            <th>{{this.stats.maximumPrice}}</th>
+          </tr>
+          <tr>
+            <th>Minimum Stock</th>
+            <th>{{this.stats.minimumPrice}}</th>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+    <div class="card">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Company Code</th>
+            <th>Stock price</th>
+            <th>Date</th>
+            <th>Time</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of data">
+            <td>{{ d.companyCode }}</td>
+            <td>{{ d.price }}</td>
+            <td>{{ d.stockDate }}</td>
+            <td>{{ d.stockTime }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

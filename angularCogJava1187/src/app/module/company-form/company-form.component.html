@@ -1,0 +1,63 @@
+<div class="page-header">
+  <h1>Add Company</h1>
+</div>
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <div class="card">
+      <form (ngSubmit)="saveCompany()" #heroForm="ngForm">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Company Code</label>
+              <input class="form-control" required type="number" name="companyCode" [(ngModel)]="data.company.companyCode" required/>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Company Name</label>
+              <input class="form-control" required type="text" name="companyName" [(ngModel)]="data.company.companyName"/>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Company CEO</label>
+              <input class="form-control" required type="text" name="companyCEO" [(ngModel)]="data.company.companyCEO"/>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Turnover</label>
+              <input class="form-control"required type="number" name="turnover" [(ngModel)]="data.company.turnover" min="10000000"/>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Website</label>
+              <input class="form-control" required type="text" name="website" [(ngModel)]="data.company.website"/>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Stock Exchange</label>
+              <select class="form-control" required name="stockExchange" [(ngModel)]="data.company.stockExchange">
+                <option>--SELECT--</option>
+                <option value="BSE">BSE</option>
+                <option value="NSE">NSE</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Stock Price</label>
+              <input class="form-control" required type="number" name="price" [(ngModel)]="data.stock.price"/>
+            </div>
+          </div>
+          <div class="col-md-12 text-center">
+            <button class="btn btn-success" [disabled]="!heroForm.form.valid" >Save</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

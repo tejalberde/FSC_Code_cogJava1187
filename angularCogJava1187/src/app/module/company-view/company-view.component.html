@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Company Details</h1>
+</div>
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div class="card" *ngIf="data">
+      <table class="table table-card">
+        <tr>
+          <td>Company Code</td>
+          <td>{{ data.company.companyCode }}</td>
+        </tr>
+        <tr>
+          <td>Company Name</td>
+          <td>{{ data.company.companyName }}</td>
+        </tr>
+        <tr>
+          <td>Company CEO</td>
+          <td>{{ data.company.companyCEO }}</td>
+        </tr>
+        <tr>
+          <td>Turnover</td>
+          <td>{{ data.company.turnover }}</td>
+        </tr>
+        <tr>
+          <td>Website</td>
+          <td>{{ data.company.website }}</td>
+        </tr>
+        <tr>
+          <td>Stock Exchange</td>
+          <td>{{ data.company.stockExchange }}</td>
+        </tr>
+        <tr>
+          <td>Stock Price</td>
+          <td>{{ data.stock.price }}</td>
+        </tr>
+        <tr>
+          <td>Stock Date</td>
+          <td>{{ data.stock.stockDate }}</td>
+        </tr>
+        <tr>
+          <td>Stock time</td>
+          <td>{{ data.stock.stockTime }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-12 text-center">
+    <a routerLink="/company" class="btn btn-success">Back</a>
+  </div>
+</div>

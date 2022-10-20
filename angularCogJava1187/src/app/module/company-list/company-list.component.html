@@ -1,0 +1,88 @@
+<section *ngIf="showList">
+  <div class="page-header">
+    <h1>Company List</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="card">
+        <table class="table table-hover text-center">
+          <thead>
+            <tr>
+              <th class="text-center">Code</th>
+              <th class="text-center">Name</th>
+              <th class="text-center">CEO</th>
+              <th class="text-center">Website</th>
+              <th class="text-center">Stock Exchange</th>
+              <th class="text-center">Turnover</th>
+              <th class="text-center">Stock Price</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of companyList">
+              <td>{{data.company.companyCode}}</td>
+              <td>{{data.company.companyName}}</td>
+              <td>{{data.company.companyCEO}}</td>
+              <td>{{data.company.website}}</td>
+              <td>{{data.company.stockExchange}}</td>
+              <td>{{data.company.turnover}}</td>
+              <td>{{data.stock.price}}</td>
+              <td>
+                <div class="btn btn-group">
+
+                  <button class="btn btn-sm btn-warning" (click)="viewCompany(data.company.companyCode)">
+                    View
+                  </button>
+                  <button class="btn btn-sm btn-info" (click)="editStock(data.company.companyCode)">
+                    Edit Stock
+                  </button>
+                  <button
+                    class="btn btn-sm btn-danger"
+                    (click)="deleteCompany(data.company.companyCode)"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section *ngIf="updateStock">
+  <div class="page-header">
+    <h1>Update Company Stock</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Company Code</label>
+              <input type="number" name="companyCode" [(ngModel)]="companyCode" disabled="true" class="form-control"/>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Stock Price</label>
+              <input type="number" name="price" [(ngModel)]="price" class="form-control"/>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="text-ceter">
+          <button class="btn btn-info" (click)="updateStockData()">Update</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
