@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "90dcebad-1935-4750-a1a3-77111f838675",
+		"name": "CompanyStock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add company",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\": {\r\n        \"companyCode\": 105,\r\n        \"companyName\": \"abc\",\r\n        \"companyCEO\": \"user1\",\r\n        \"turnover\": 100000001,\r\n        \"website\": \"abc@123\",\r\n        \"stockExchange\": \"NBC\"\r\n    },\r\n    \"stock\" : {\r\n        \"price\" : 1234.5\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/company/addCompany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"company",
+						"addCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getcompanyByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/viewCompanyStock/getCompany/103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"viewCompanyStock",
+						"getCompany",
+						"103"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyCode\": 102,\r\n    \"price\": 12366.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/stock/updateStock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"stock",
+						"updateStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllcompanyWithLatestStock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/viewCompanyStock/ListAllComapany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"viewCompanyStock",
+						"ListAllComapany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindStocksByCompanyCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/viewCompanyStock/FindStockByCompanyCode/102",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"viewCompanyStock",
+						"FindStockByCompanyCode",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStockByDates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/viewCompanyStock/GetStockByDates?companyCode=102&fromDate=2022-10-11&endDate=2022-10-11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"viewCompanyStock",
+						"GetStockByDates"
+					],
+					"query": [
+						{
+							"key": "companyCode",
+							"value": "102"
+						},
+						{
+							"key": "fromDate",
+							"value": "2022-10-11"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-10-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMinMaxAvgPrice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/viewCompanyStock/GetMinMaxAvgPrice?companyCode=102&fromDate=2022-10-11&endDate=2022-10-11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"viewCompanyStock",
+						"GetMinMaxAvgPrice"
+					],
+					"query": [
+						{
+							"key": "companyCode",
+							"value": "102"
+						},
+						{
+							"key": "fromDate",
+							"value": "2022-10-11"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-10-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveCompany",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/company/RemoveCompany/105",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"company",
+						"RemoveCompany",
+						"105"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
